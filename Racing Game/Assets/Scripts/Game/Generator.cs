@@ -11,44 +11,14 @@ public class Generator : MonoBehaviour {
     public GameObject obstacle1, obstacle2;
     public GameObject finishLine;
 
-    public int stage;
     public float obstacleRate, fuelRate, carRate, roadRate, finishLineTimer;
-
-    public float marginRight, marginLeft;
 
 	// Use this for initialization
 	void Start () {
-        stage = PlayerPrefs.GetInt("Stage");
 
         nextCar = Random.Range(1, 5);
         nextRoad = Random.Range(1, 6);
         nextObstacle = Random.Range(1, 3);
-
-        switch (stage)
-        {
-            case 1:
-                obstacleRate = 0f;
-                fuelRate = 0f;
-                carRate = 0f;
-                roadRate = 0f;
-                finishLineTimer = 0f;
-                break;
-            case 2:
-                obstacleRate = 0f;
-                fuelRate = 0f;
-                carRate = 0f;
-                roadRate = 0f;
-                finishLineTimer = 0f;
-                break;
-            case 3:
-                obstacleRate = 0f;
-                fuelRate = 0f;
-                carRate = 0f;
-                roadRate = 0f;
-                finishLineTimer = 0f;
-                break;
-        }
-
 
         InvokeRepeating("GenerateFuel", fuelRate, fuelRate);
         InvokeRepeating("GenerateObstacle", obstacleRate, obstacleRate);
