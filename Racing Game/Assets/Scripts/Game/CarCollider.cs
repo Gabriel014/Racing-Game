@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CarContoller : MonoBehaviour {
+public class CarCollider : MonoBehaviour {
 
 	public int fuel = 100;
 	public int position;
