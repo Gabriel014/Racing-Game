@@ -11,6 +11,12 @@ public class CarCollider : MonoBehaviour {
 		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
 	}
 
+    void Update()
+    {
+        if (fuel <= 0)
+            Application.LoadLevel(Application.loadedLevel);
+    }
+
 
 	// Use this for initialization
 	void OnTriggerEnter2D (Collider2D other){

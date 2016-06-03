@@ -18,7 +18,7 @@ public class Mover : MonoBehaviour
     {
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPosition.y + (Screen.height * 1.1) < 0){
-			if (thisGameObject.name == "Car1" || thisGameObject.name == "Car2") carPosition += 1;
+			if (thisGameObject.name == "Car1" || thisGameObject.name == "Car2") carPosition -= 1;
 			Destroy (this.gameObject);
     	}
 	}
