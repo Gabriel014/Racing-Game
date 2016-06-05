@@ -3,18 +3,21 @@ using System.Collections;
 
 public class CarCollider : MonoBehaviour {
 
-	public int fuel = 100;
-	public int position;
+	public static float fuel = 1;
+	public static int position;
 	public GameObject car = GameObject.Find("Player");
+	public static bool gameOver;
 
 	void Start (){
 		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
+		gameOver = false;
 	}
 
     void Update()
     {
-        if (fuel <= 0)
-            Application.LoadLevel(Application.loadedLevel);
+        if (fuel <= 0) 
+			Dead();
+            //Application.LoadLevel(Application.loadedLevel);
     }
 
 
@@ -23,12 +26,13 @@ public class CarCollider : MonoBehaviour {
 
 		//If the player collides with an Obstacle, it will end the game.
 		if (other.tag == "Obstacle") 
-			Application.LoadLevel (Application.loadedLevel);
+			Dead();
+			//Application.LoadLevel (Application.loadedLevel);
 
 		//If the player collides with a fuel object, it will increase the fuel by 20 (exactly the same
 		//amount of fuel it spends in 10 seconds, time between fuels spawn).
 		if (other.tag == "Fuel")
-			fuel += 20;
+			fuel += 0.2f;
 
 		//If the player collides with the Finish Line it will end the game
 		//and redirects the player to a victory screen.
@@ -37,6 +41,12 @@ public class CarCollider : MonoBehaviour {
 	}
 
 	void fuelDecreaser (){
-			fuel -= 1;
+			fuel -= 0.01f;
 		}
+
+	public static void Dead(){
+		Destroy(GameObject.Find("Player"));
+		gameOver = true;
+
+	}
 }

@@ -7,7 +7,8 @@ public class CarKiller : MonoBehaviour {
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
         if (screenPosition.y  < 10)
         {
-            Application.LoadLevel(Application.loadedLevel);
+			CarCollider.Dead();
+			//Application.LoadLevel(Application.loadedLevel);
         }
     }
 }
