@@ -13,6 +13,7 @@ public class Mover : MonoBehaviour
 		thisGameObject = gameObject;
         GetComponent<Rigidbody2D>().velocity = velocity;
         transform.position = new Vector3(transform.position.x - range * Random.value, transform.position.y, transform.position.z);
+        
     }
     void Update()
     {
@@ -22,4 +23,12 @@ public class Mover : MonoBehaviour
 			Destroy (this.gameObject);
     	}
 	}
+
+    void OnCollisionEnter2D (Collider2D other)
+    {
+        if (other.name == "Road2") transform.position = new Vector3(-5, transform.position.y, transform.position.z);
+        else if (other.name == "Road3") transform.position = new Vector3(5, transform.position.y, transform.position.z);
+        else transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
 }

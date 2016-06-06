@@ -14,7 +14,7 @@ public class CarCollider : MonoBehaviour {
 	void Start (){
         audio = GetComponent<AudioSource>();
         fuel = 1.0f;
-		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
+		InvokeRepeating ("fuelDecreaser", 0.25f, 0.25f);
 		gameOver = false;
 
 	}
@@ -66,13 +66,15 @@ public class CarCollider : MonoBehaviour {
 	public static void Dead() {
 	
 		Destroy(GameObject.Find("Player"));
-		gameOver = true;
+        Destroy(GameObject.Find("GameController"));
+        gameOver = true;
 
 	}
 
 	public static void Win() {
      	Destroy(GameObject.Find("Player"));
-		Dead ();
+        Destroy(GameObject.Find("GameController"));
+        Dead ();
 
 		
 	}
