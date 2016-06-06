@@ -10,7 +10,7 @@ public class CarCollider : MonoBehaviour {
 
 
 	void Start (){
-		fuel = 1;
+		fuel = 1.0f;
 		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
 		gameOver = false;
 
@@ -36,10 +36,15 @@ public class CarCollider : MonoBehaviour {
 		//amount of fuel it spends in 10 seconds, time between fuels spawn).
 		if (other.tag == "Fuel")
 			fuel += 0.2f;
+			if (fuel > 1.0f){
+				fuel = 1.0f;
+			}
+			Destroy (other);
+			//SpriteRenderer.Destroy (other);
 
 		//If the player collides with the Finish Line it will end the game
 		//and redirects the player to a victory screen.
-		if (other.name == "FinishLine") 
+		if (other.tag == "FinishLine") 
 			Win();
 
 		
@@ -59,6 +64,7 @@ public class CarCollider : MonoBehaviour {
 
 	public static void Win() {
 		Destroy(GameObject.Find("Player"));
+		Dead ();
 
 		
 	}

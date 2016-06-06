@@ -4,6 +4,7 @@ using System.Collections;
 public class Generator : MonoBehaviour {
 	
 	public int nextRoad, nextCar, nextObstacle;
+	public int oponents = 5;
 	
 	public GameObject road1, road2, road3;
 	public GameObject car1, car2;
@@ -34,11 +35,16 @@ public class Generator : MonoBehaviour {
 	}
 	
 	void GenerateCar() {
-		// Generate a random kind of car on the road each carRate seconds, this can be changed so more cars can be added
-		if (nextCar <= 3) Instantiate(car1);
-		if (nextCar > 3) Instantiate(car2);
-		
-		nextCar = Random.Range(1, 5);
+		// Generate a random kind of car on the road each carRate seconds, as long as the limit hasn't been yet reached
+		// this can be changed so more cars can be added
+		if (oponents > 0){
+			if (nextCar <= 3) Instantiate(car1);
+			if (nextCar > 3) Instantiate(car2);
+
+			nextCar = Random.Range(1, 6);
+			oponents -= 1;
+		}
+
 		
 	}
 	
