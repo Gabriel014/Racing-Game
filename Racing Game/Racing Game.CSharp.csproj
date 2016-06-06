@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -77,6 +83,12 @@
     <Compile Include="Assets\Scripts\Game\Generator.cs" />
     <Compile Include="Assets\Scripts\Game\Mover.cs" />
     <Compile Include="Assets\Scripts\Game\RoadMover.cs" />
+    <Compile Include="Assets\Scripts\UI\FuelBar.cs" />
+    <Compile Include="Assets\Scripts\UI\GameUIController.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadingScene.cs" />
+    <Compile Include="Assets\Scripts\UI\RouteController.cs" />
+    <Compile Include="Assets\Scripts\UI\ScenesController.cs" />
+    <Compile Include="Assets\Scripts\UI\Splash.cs" />
     <Compile Include="Assets\www.Devination.com\FloatingPlayer2DController.cs" />
   </ItemGroup>
   <ItemGroup>

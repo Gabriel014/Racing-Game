@@ -4,7 +4,9 @@ using System.Collections;
 public class Generator : MonoBehaviour {
 	
 	public int nextRoad, nextCar, nextObstacle;
-	public int oponents = 5;
+	public int oponents;
+    public static int position;
+    public int stageMaxPosition;
 	
 	public GameObject road1, road2, road3;
 	public GameObject car1, car2;
@@ -16,7 +18,8 @@ public class Generator : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+        position = stageMaxPosition;
+
 		nextCar = Random.Range(1, 5);
 		nextRoad = Random.Range(1, 6);
 		nextObstacle = Random.Range(1, 3);
@@ -43,6 +46,7 @@ public class Generator : MonoBehaviour {
 
 			nextCar = Random.Range(1, 6);
 			oponents -= 1;
+            Invoke("PositionIncreaser", 5f);
 		}
 
 		
@@ -81,4 +85,10 @@ public class Generator : MonoBehaviour {
 		// current stage.
 		Instantiate(finishLine);
 	}
+
+    void PositionIncreaser()
+    {
+        // Increases the position of the car in the race 1 second after each enemy car is created
+        position -= 1;
+    }
 }

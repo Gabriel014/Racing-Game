@@ -4,7 +4,6 @@ using System.Collections;
 public class CarCollider : MonoBehaviour {
 
 	public static float fuel = 1;
-	public static int position;
 	public GameObject car = GameObject.Find("Player");
 	public static bool gameOver;
 
@@ -32,14 +31,14 @@ public class CarCollider : MonoBehaviour {
 			Dead();
 			//Application.LoadLevel (Application.loadedLevel);
 
-		//If the player collides with a fuel object, it will increase the fuel by 20 (exactly the same
+		//If the player collides with a fuel object, it will increase the fuel by 25 (exactly the same
 		//amount of fuel it spends in 10 seconds, time between fuels spawn).
 		if (other.tag == "Fuel")
-			fuel += 0.2f;
+			fuel += 0.25f;
 			if (fuel > 1.0f){
 				fuel = 1.0f;
 			}
-			Destroy (other);
+			Destroy (GameObject.FindGameObjectWithTag("Fuel"));
 			//SpriteRenderer.Destroy (other);
 
 		//If the player collides with the Finish Line it will end the game

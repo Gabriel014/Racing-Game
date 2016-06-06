@@ -22,7 +22,7 @@ public class GameUIController : MonoBehaviour
 
     void Update()
     {
-		gamePosition.text = CarCollider.position.ToString();
+		gamePosition.text = Generator.position.ToString();
     }
 
   
@@ -53,7 +53,7 @@ public class GameUIController : MonoBehaviour
 
     public void showScore()
     {
-		finalPosition.text = CarCollider.position.ToString();
+		finalPosition.text = Generator.position.ToString();
        
     }
 
