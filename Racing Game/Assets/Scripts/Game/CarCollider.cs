@@ -6,10 +6,14 @@ public class CarCollider : MonoBehaviour {
 	public static float fuel = 1;
 	public GameObject car = GameObject.Find("Player");
 	public static bool gameOver;
+    public AudioSource audio;
+    public AudioClip crash;
+    public AudioClip fuelget;
 
 
 	void Start (){
-		fuel = 1.0f;
+        audio = GetComponent<AudioSource>();
+        fuel = 1.0f;
 		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
 		gameOver = false;
 
@@ -26,14 +30,19 @@ public class CarCollider : MonoBehaviour {
 	// Use this for initialization
 	void OnTriggerEnter2D (Collider2D other){
 
-		//If the player collides with an Obstacle, it will end the game.
-		if (other.tag == "Obstacle") 
-			Dead();
-			//Application.LoadLevel (Application.loadedLevel);
+        //If the player collides with an Obstacle, it will end the game.
+        if (other.tag == "Obstacle")
+        {
+            Dead();
+            audio.PlayOneShot(crash, 1f);
+        }
 
-		//If the player collides with a fuel object, it will increase the fuel by 25 (exactly the same
-		//amount of fuel it spends in 10 seconds, time between fuels spawn).
-		if (other.tag == "Fuel")
+        //Application.LoadLevel (Application.loadedLevel);
+
+        //If the player collides with a fuel object, it will increase the fuel by 25 (exactly the same
+        //amount of fuel it spends in 10 seconds, time between fuels spawn).
+        if (other.tag == "Fuel")
+            audio.PlayOneShot(fuelget, 1f);
 			fuel += 0.25f;
 			if (fuel > 1.0f){
 				fuel = 1.0f;
@@ -56,13 +65,13 @@ public class CarCollider : MonoBehaviour {
 
 	public static void Dead() {
 	
-		Destroy(GameObject.Find("Player"));
+	//	Destroy(GameObject.Find("Player"));
 		gameOver = true;
 
 	}
 
 	public static void Win() {
-		Destroy(GameObject.Find("Player"));
+    //  Destroy(GameObject.Find("Player"));
 		Dead ();
 
 		
