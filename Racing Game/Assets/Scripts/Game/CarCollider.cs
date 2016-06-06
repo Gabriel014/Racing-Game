@@ -8,10 +8,12 @@ public class CarCollider : MonoBehaviour {
 	public GameObject car = GameObject.Find("Player");
 	public static bool gameOver;
 
+
 	void Start (){
 		fuel = 1;
 		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
 		gameOver = false;
+
 	}
 
     void Update()
@@ -38,16 +40,26 @@ public class CarCollider : MonoBehaviour {
 		//If the player collides with the Finish Line it will end the game
 		//and redirects the player to a victory screen.
 		if (other.name == "FinishLine") 
-			Application.LoadLevel (Application.loadedLevel);
+			Win();
+
+		
 	}
 
-	void fuelDecreaser (){
-			fuel -= 0.01f;
-		}
+	void fuelDecreaser () {
 
-	public static void Dead(){
+		fuel -= 0.01f;
+	}
+
+	public static void Dead() {
+	
 		Destroy(GameObject.Find("Player"));
 		gameOver = true;
 
+	}
+
+	public static void Win() {
+		Destroy(GameObject.Find("Player"));
+
+		
 	}
 }

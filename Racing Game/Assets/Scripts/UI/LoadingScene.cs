@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class LoadingScene : MonoBehaviour {
 
+	public static string sceneToLoad;
 	private bool loadScene = false;
 
 	//[SerializeField]
@@ -48,7 +49,7 @@ public class LoadingScene : MonoBehaviour {
 	//	yield return new WaitForSeconds(3);
 
 		// Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
-		AsyncOperation async = Application.LoadLevelAsync("Stage1");
+		AsyncOperation async = Application.LoadLevelAsync(sceneToLoad);
 
 		// While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
 		while (!async.isDone) {

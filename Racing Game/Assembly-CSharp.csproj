@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\UI\FuelBar.cs" />
      <Compile Include="Assets\Scripts\UI\GameUIController.cs" />
      <Compile Include="Assets\Scripts\UI\LoadingScene.cs" />
+     <Compile Include="Assets\Scripts\UI\RouteController.cs" />
      <Compile Include="Assets\Scripts\UI\ScenesController.cs" />
      <Compile Include="Assets\Scripts\UI\Splash.cs" />
      <Compile Include="Assets\www.Devination.com\FloatingPlayer2DController.cs" />
