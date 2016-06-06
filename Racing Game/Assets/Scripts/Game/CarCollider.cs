@@ -65,13 +65,13 @@ public class CarCollider : MonoBehaviour {
 
 	public static void Dead() {
 	
-	//	Destroy(GameObject.Find("Player"));
+		Destroy(GameObject.Find("Player"));
 		gameOver = true;
 
 	}
 
 	public static void Win() {
-    //  Destroy(GameObject.Find("Player"));
+     	Destroy(GameObject.Find("Player"));
 		Dead ();
 
 		
