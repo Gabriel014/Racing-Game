@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Game\AudioController.cs" />
      <Compile Include="Assets\Scripts\Game\CarCollider.cs" />
      <Compile Include="Assets\Scripts\Game\CarKiller.cs" />
      <Compile Include="Assets\Scripts\Game\Generator.cs" />
