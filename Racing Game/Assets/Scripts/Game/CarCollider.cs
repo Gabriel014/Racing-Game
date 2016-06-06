@@ -9,6 +9,7 @@ public class CarCollider : MonoBehaviour {
 	public static bool gameOver;
 
 	void Start (){
+		fuel = 1;
 		InvokeRepeating ("fuelDecreaser", 0.5f, 0.5f);
 		gameOver = false;
 	}
