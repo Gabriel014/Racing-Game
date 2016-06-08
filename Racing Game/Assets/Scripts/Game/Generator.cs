@@ -89,6 +89,6 @@ public class Generator : MonoBehaviour {
     void PositionIncreaser()
     {
         // Increases the position of the car in the race 1 second after each enemy car is created
-        position -= 1;
+        if (position > 1) position -= 1;
     }
 }
