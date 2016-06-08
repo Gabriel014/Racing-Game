@@ -29,10 +29,8 @@ public class FloatingPlayer2DController : MonoBehaviour
 		bool isBoosting = CrossPlatformInputManager.GetButton("Boost");
         //Debug.Log(isBoosting ? boostMultiplier : 1); //returns boostMultiplier if true, 1 if false
         myBody.velocity = moveVec;
-        if (myBody.velocity.x < -1 && myBody.velocity.y > 1) myBody.rotation = 30;
-        else if (myBody.velocity.x > 1 && myBody.velocity.y > 1) myBody.rotation = -30;
-        else if (myBody.velocity.x > 1 && myBody.velocity.y < -1) myBody.rotation = 30;
-        else if (myBody.velocity.x < 1 && myBody.velocity.y < -1) myBody.rotation = -30;
+        if (myBody.velocity.x < -4 && myBody.velocity.y >= 0) myBody.rotation = 30;
+        else if (myBody.velocity.x > 4 && myBody.velocity.y >= 0) myBody.rotation = -30;
         else myBody.rotation = 0;
 
     }
