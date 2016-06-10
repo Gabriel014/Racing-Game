@@ -9,7 +9,7 @@ public class CarCollider : MonoBehaviour {
     public AudioSource audio;
     public AudioClip crash;
     public AudioClip fuelget;
-
+	string music;
 
 	void Start (){
         audio = GetComponent<AudioSource>();
@@ -33,8 +33,8 @@ public class CarCollider : MonoBehaviour {
         //If the player collides with an Obstacle, it will end the game.
         if (other.tag == "Obstacle")
         {
+			audio.PlayOneShot(crash, 1f);
             Dead();
-            audio.PlayOneShot(crash, 1f);
         }
 
         //Application.LoadLevel (Application.loadedLevel);
@@ -42,7 +42,9 @@ public class CarCollider : MonoBehaviour {
         //If the player collides with a fuel object, it will increase the fuel by 25 (exactly the same
         //amount of fuel it spends in 10 seconds, time between fuels spawn).
         if (other.tag == "Fuel")
-            audio.PlayOneShot(fuelget, 1f);
+			music = PlayerPrefs.GetString("music");
+			if (music == "on") audio.PlayOneShot(fuelget, 1f);
+
 			fuel += 0.25f;
 			if (fuel > 1.0f){
 				fuel = 1.0f;

@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C5C49748-D013-E379-6DE8-DE0944B3B738}") = "Racing-Game", "Assembly-CSharp-firstpass.csproj", "{F2968370-FF80-FD52-1203-9B168B04E4D3}"
+EndProject
+Project("{C5C49748-D013-E379-6DE8-DE0944B3B738}") = "Racing-Game", "Assembly-CSharp.csproj", "{8E1937DF-9CC7-0777-2BCC-0A8E8A9773B2}"
+EndProject
+Project("{C5C49748-D013-E379-6DE8-DE0944B3B738}") = "Racing-Game", "Assembly-CSharp-Editor.csproj", "{0905CE16-68BE-1F53-3F80-8AABFBAEF5F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2968370-FF80-FD52-1203-9B168B04E4D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2968370-FF80-FD52-1203-9B168B04E4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2968370-FF80-FD52-1203-9B168B04E4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2968370-FF80-FD52-1203-9B168B04E4D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E1937DF-9CC7-0777-2BCC-0A8E8A9773B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E1937DF-9CC7-0777-2BCC-0A8E8A9773B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E1937DF-9CC7-0777-2BCC-0A8E8A9773B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E1937DF-9CC7-0777-2BCC-0A8E8A9773B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0905CE16-68BE-1F53-3F80-8AABFBAEF5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0905CE16-68BE-1F53-3F80-8AABFBAEF5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0905CE16-68BE-1F53-3F80-8AABFBAEF5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0905CE16-68BE-1F53-3F80-8AABFBAEF5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

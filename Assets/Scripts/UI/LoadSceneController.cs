@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class RouteController : MonoBehaviour {
+public class LoadSceneController : MonoBehaviour {
 
 
 	public string SceneToLoad;
@@ -29,7 +29,9 @@ public class RouteController : MonoBehaviour {
 	}
 
 	public void Escape(){
-		SceneManager.LoadScene ("Menu");
+		SceneToLoad = "Menu";
+		LoadingScene.sceneToLoad = SceneToLoad;
+		SceneManager.LoadScene("Loading");
 	}
 
 	IEnumerator DisplayScene(){

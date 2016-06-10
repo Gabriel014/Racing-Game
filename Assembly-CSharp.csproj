@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{465D9B9A-306A-81DB-E487-11CFEBB70CD4}</ProjectGuid>
+    <ProjectGuid>{8E1937DF-9CC7-0777-2BCC-0A8E8A9773B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,8 +54,11 @@
      <Compile Include="Assets\Scripts\Game\RoadMover.cs" />
      <Compile Include="Assets\Scripts\UI\FuelBar.cs" />
      <Compile Include="Assets\Scripts\UI\GameUIController.cs" />
+     <Compile Include="Assets\Scripts\UI\LoadSceneController.cs" />
      <Compile Include="Assets\Scripts\UI\LoadingScene.cs" />
-     <Compile Include="Assets\Scripts\UI\RouteController.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuGenerate.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuMover.cs" />
+     <Compile Include="Assets\Scripts\UI\QuitApp.cs" />
      <Compile Include="Assets\Scripts\UI\ScenesController.cs" />
      <Compile Include="Assets\Scripts\UI\Splash.cs" />
      <Compile Include="Assets\www.Devination.com\FloatingPlayer2DController.cs" />
@@ -69,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{CF36A64A-0764-EC2C-A721-5D7B4BD3C49A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{F2968370-FF80-FD52-1203-9B168B04E4D3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
