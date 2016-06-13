@@ -14,7 +14,7 @@ public class CarCollider : MonoBehaviour {
 	void Start (){
         audio = GetComponent<AudioSource>();
         fuel = 1.0f;
-		InvokeRepeating ("fuelDecreaser", 0.25f, 0.25f);
+		InvokeRepeating ("fuelDecreaser", 0.2f, 0.2f);
 		gameOver = false;
 
 	}
@@ -31,7 +31,7 @@ public class CarCollider : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other){
 
         //If the player collides with an Obstacle, it will end the game.
-        if (other.tag == "Obstacle")
+        if (other.tag == "Car" || other.tag == "Obstacle")
         {
 			audio.PlayOneShot(crash, 1f);
             Dead();
@@ -45,7 +45,7 @@ public class CarCollider : MonoBehaviour {
 			music = PlayerPrefs.GetString("music");
 			if (music == "on") audio.PlayOneShot(fuelget, 1f);
 
-			fuel += 0.25f;
+			fuel += 0.5f;
 			if (fuel > 1.0f){
 				fuel = 1.0f;
 			}

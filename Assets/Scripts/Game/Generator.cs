@@ -46,7 +46,6 @@ public class Generator : MonoBehaviour {
 
 			nextCar = Random.Range(1, 6);
 			oponents -= 1;
-            Invoke("PositionIncreaser", 5f);
 		}
 
 		
@@ -79,16 +78,11 @@ public class Generator : MonoBehaviour {
 		}
 		
 	}
-	
-	void FinishLineCreator(){
-		// Creates the finish line after finishLineTimer seconds has elapsed, this one can be changed according to the
-		// current stage.
-		Instantiate(finishLine);
-	}
 
-    void PositionIncreaser()
+    void FinishLineCreator()
     {
-        // Increases the position of the car in the race 1 second after each enemy car is created
-        if (position > 1) position -= 1;
+        // Creates the finish line after finishLineTimer seconds has elapsed, this one can be changed according to the
+        // current stage.
+        Instantiate(finishLine);
     }
 }

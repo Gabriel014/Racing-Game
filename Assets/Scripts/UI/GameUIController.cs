@@ -8,6 +8,7 @@ public class GameUIController : MonoBehaviour
 
     public GameObject GameOverUI;
     public GameObject Hud;
+    public string ordinal;
 
 	public Text finalPosition;
 
@@ -22,7 +23,24 @@ public class GameUIController : MonoBehaviour
 
     void Update()
     {
-		gamePosition.text = Generator.position.ToString();
+        switch (Generator.position)
+        {
+            case 1:
+                ordinal = "st";
+                break;
+            case 2:
+                ordinal = "nd";
+                break;
+            case 3:
+                ordinal = "rd";
+                break;
+            default:
+                ordinal = "th";
+                break;
+
+        }
+
+		gamePosition.text = Generator.position.ToString()+ordinal;
     }
 
   
@@ -53,7 +71,7 @@ public class GameUIController : MonoBehaviour
 
     public void showScore()
     {
-		finalPosition.text = Generator.position.ToString();
+		finalPosition.text = Generator.position.ToString()+ordinal;
        
     }
 

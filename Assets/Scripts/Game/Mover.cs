@@ -4,12 +4,14 @@ public class Mover : MonoBehaviour
 {
     public Vector2 velocity = new Vector2(-3, 0);
     public float range;
-	public GameObject thisGameObject;
+	public GameObject thisGameObject, player;
 	public int carPosition;
+    public bool triggered = true;
 
     // This scripts movesobjects, such as fuels, obstacles, cars and etc.
     void Start()
     {
+        player = GameObject.Find("Player");
 		thisGameObject = gameObject;
         GetComponent<Rigidbody2D>().velocity = velocity;
         transform.position = new Vector3(transform.position.x - range * Random.value, transform.position.y, transform.position.z);
@@ -19,10 +21,20 @@ public class Mover : MonoBehaviour
     {
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPosition.y + (Screen.height * 1.1) < 0){
-			if (thisGameObject.name == "Car1" || thisGameObject.name == "Car2") carPosition -= 1;
 			Destroy (this.gameObject);
     	}
-	}
+
+        if (thisGameObject.transform.position.y < player.transform.position.y && triggered && thisGameObject.tag == "Car") {
+            Generator.position -= 1;
+            triggered = false;
+            print("-1");
+        }
+        if (thisGameObject.transform.position.y > player.transform.position.y && !triggered && thisGameObject.tag == "Car"){
+            Generator.position += 1;
+            triggered = true;
+            print("+1");
+        }
+    }
 
     void OnCollisionEnter2D (Collider2D other)
     {
