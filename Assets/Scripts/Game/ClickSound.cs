@@ -24,6 +24,6 @@ public class ClickSound : MonoBehaviour {
 	// Update is called once per frame
 	void PlaySound () {
 		music = PlayerPrefs.GetString("music");
-		if (music == "on") source.PlayOneShot(sound);
+		if (music != "off") source.PlayOneShot(sound);
 	}
 }

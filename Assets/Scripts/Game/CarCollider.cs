@@ -43,7 +43,7 @@ public class CarCollider : MonoBehaviour {
         //amount of fuel it spends in 10 seconds, time between fuels spawn).
         if (other.tag == "Fuel")
 			music = PlayerPrefs.GetString("music");
-			if (music == "on") audio.PlayOneShot(fuelget, 1f);
+			if (music != "off") audio.PlayOneShot(fuelget, 1f);
 
 			fuel += 0.5f;
 			if (fuel > 1.0f){
@@ -54,8 +54,28 @@ public class CarCollider : MonoBehaviour {
 
 		//If the player collides with the Finish Line it will end the game
 		//and redirects the player to a victory screen.
-		if (other.tag == "FinishLine") 
+
+		if (other.tag == "FinishLine1"){
+			PlayerPrefs.SetString("clear1","true");
 			Win();
+		}
+		if (other.tag == "FinishLine2"){
+			PlayerPrefs.SetString("clear2","true");
+			Win();
+		}
+		if (other.tag == "FinishLine3"){
+			PlayerPrefs.SetString("clear1","true");
+			Win();
+		}
+		if (other.tag == "FinishLine4"){
+			PlayerPrefs.SetString("clear1","true");
+			Win();
+		}
+		if (other.tag == "FinishLine5"){
+			//PlayerPrefs.SetString("clear1","true");
+			Win();
+		}
+		
 
 		
 	}

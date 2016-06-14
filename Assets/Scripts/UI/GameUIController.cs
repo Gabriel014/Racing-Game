@@ -11,6 +11,8 @@ public class GameUIController : MonoBehaviour
     public string ordinal;
 
 	public Text finalPosition;
+	public Text finalPositionFront;
+
 
     public Text gamePosition;
 
@@ -72,6 +74,7 @@ public class GameUIController : MonoBehaviour
     public void showScore()
     {
 		finalPosition.text = Generator.position.ToString()+ordinal;
+		finalPositionFront.text = finalPosition.text;
        
     }
 
