@@ -11,6 +11,7 @@ public class Mover : MonoBehaviour
     // This scripts movesobjects, such as fuels, obstacles, cars and etc.
     void Start()
     {
+        InvokeRepeating("RotationFixer", 1f, 1f);
         player = GameObject.Find("Player");
 		thisGameObject = gameObject;
         GetComponent<Rigidbody2D>().velocity = velocity;
@@ -19,6 +20,8 @@ public class Mover : MonoBehaviour
     }
     void Update()
     {
+        GetComponent<Rigidbody2D>().velocity = velocity;
+
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPosition.y + (Screen.height * 1.1) < 0){
 			Destroy (this.gameObject);
@@ -41,6 +44,11 @@ public class Mover : MonoBehaviour
         if (other.name == "Road2") transform.position = new Vector3(-5, transform.position.y, transform.position.z);
         else if (other.name == "Road3") transform.position = new Vector3(5, transform.position.y, transform.position.z);
         else transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
+
+    void RotationFixer()
+    {
+        thisGameObject.GetComponent<Rigidbody2D>().rotation = 0;
     }
 
 }

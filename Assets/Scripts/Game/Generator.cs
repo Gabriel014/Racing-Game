@@ -7,7 +7,9 @@ public class Generator : MonoBehaviour {
 	public int oponents;
     public static int position;
     public int stageMaxPosition;
-	
+
+    public Sprite first, second, third;
+    public GameObject positionSprite;
 	public GameObject road1, road2, road3;
 	public GameObject car1, car2;
 	public GameObject fuelObject;
@@ -31,6 +33,24 @@ public class Generator : MonoBehaviour {
 		Invoke("FinishLineCreator", finishLineTimer);
 		
 	}
+
+    void Update ()
+    {
+        switch (position)
+        {
+            case 1:
+                positionSprite.GetComponent<SpriteRenderer>().sprite = first;
+                break;
+
+            case 2:
+                positionSprite.GetComponent<SpriteRenderer>().sprite = second;
+                break;
+
+            default:
+                positionSprite.GetComponent<SpriteRenderer>().sprite = third;
+                break;
+        }
+    }
 	
 	
 	void GenerateFuel() {
