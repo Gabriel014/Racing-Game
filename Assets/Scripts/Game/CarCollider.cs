@@ -10,6 +10,7 @@ public class CarCollider : MonoBehaviour {
     public AudioClip crash;
     public AudioClip fuelget;
 	string music;
+    public float fuelAmount;
 
 	void Start (){
         audio = GetComponent<AudioSource>();
@@ -45,7 +46,7 @@ public class CarCollider : MonoBehaviour {
 			music = PlayerPrefs.GetString("music");
 			if (music != "off") audio.PlayOneShot(fuelget, 1f);
 
-			fuel += 0.5f;
+			fuel += fuelAmount;
 			if (fuel > 1.0f){
 				fuel = 1.0f;
 			}
