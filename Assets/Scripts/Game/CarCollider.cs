@@ -65,11 +65,11 @@ public class CarCollider : MonoBehaviour {
 			Win();
 		}
 		if (other.tag == "FinishLine3"){
-			PlayerPrefs.SetString("clear1","true");
+			PlayerPrefs.SetString("clear3","true");
 			Win();
 		}
 		if (other.tag == "FinishLine4"){
-			PlayerPrefs.SetString("clear1","true");
+			PlayerPrefs.SetString("clear4","true");
 			Win();
 		}
 		if (other.tag == "FinishLine5"){
